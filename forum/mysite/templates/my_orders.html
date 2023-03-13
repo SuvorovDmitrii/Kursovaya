@@ -1,0 +1,24 @@
+{% extends "base_generate.html" %}
+{% block content %}
+{% load static %}
+
+<div>
+    {% for req in requests %}
+        {% if req.person == request.user %}
+            <div class="container d-flex">
+
+                <div class="container-text">
+                   {{req.text}}
+                    {{req.datetime}}
+                </div>
+                {% if req.img %}
+                <div class="start-img">
+                    <img src="{{ req.img.url }}" width="350px">
+                </div>
+                {% endif %}
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{%endblock%}

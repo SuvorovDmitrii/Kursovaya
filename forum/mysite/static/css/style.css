@@ -1,0 +1,196 @@
+.header {
+    width: 1310px;
+    margin:0 auto;
+}
+
+.container-vir {
+    margin:0 auto;
+    max-width: 1440px;
+}
+
+.container-text{
+    width:450px;
+}
+
+.container {
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: 66px;
+}
+
+.btn {
+    border-radius: 0;
+    padding: 10px 25px;
+}
+
+.contacts {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    align-items: center;
+}
+
+.navig {
+    max-width: 1440px;
+    margin:0;
+}
+
+.navig li {
+    padding: 0 15px;
+
+}
+
+#ulik {
+    text-align: left;
+    margin-left:100px;
+}
+
+/* --- БЛОК 2 --- */
+
+.blok2 {
+    background: #F3F3F3;
+    height: 390px;
+}
+
+.blok2-content {
+    text-align: left;
+}
+
+.blok2-content h2{
+    font-size: 40px;
+
+
+}
+.block2_cont {
+    padding:75px 15%;
+}
+
+/* --- ПОДВАЛ --- */
+
+footer {
+    background: #F3F3F3;
+    list-style:none;
+}
+
+.footer_1 {
+    width: 300px;
+}
+
+.footer_block {
+    display: flex;
+    justify-content: space-between;
+     padding: 25px;
+}
+
+.footer-info{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #878787;
+
+}
+
+footer ul{
+   list-style:none;
+
+}
+
+footer h4{
+    font-style: italic;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: #000000;
+    margin-left:30px;
+}
+
+/* --- РЕГИСТРАЦИЯ --- */
+
+.reg{
+    justify-content:center;
+    align-items: center;
+    display: flex;
+}
+
+.reg table tr {
+    display: grid;
+}
+
+form input {
+    width: 500px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: #F0F0F0;
+}
+
+label {
+    text-transform: uppercase;
+    margin-top: 25px;
+}
+
+#but {
+    margin-top: 25px;
+    width: 250px;
+    background: #FFC801;
+    text-transform: uppercase;
+    transition: .2s;
+}
+
+#but:hover {
+    background: #C09E21;
+}
+
+#button {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+
+}
+
+.reigis {
+    height: 100%;
+    padding: 50px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.size {
+    height: 69vh;
+}
+
+.registration  {
+    display: grid;
+    width: 500px;
+}
+
+.registration p {
+    display: grid;
+}
+
+.helptext {
+    font-size: 12px;
+}
+
+#link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+#link a {
+    color: #385A64;
+    text-decoration: none;
+}
+
+.requests_admin table{
+    border: solid 1px black;
+}
+
+.requests_admin table tr td{
+    border: solid 1px black;
+}

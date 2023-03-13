@@ -1,0 +1,42 @@
+{% extends "base_generate.html" %}
+{% block content %}
+{% load static %}
+<div>
+    <div class="container d-flex">
+
+        <div class="container-text">
+            <h1>Мы делаем мир лучше!</h1>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <button type="button" class="btn btn-outline-dark">Зарегестрироваться</button>
+        </div>
+
+        <div class="start-img">
+            <img src="{% static 'images/pic.png' %}">
+        </div>
+
+    </div>
+</div>
+
+<div class="blok2">
+    <div class="container-v ">
+        <div class="block2_cont w-50">
+            <div class="blok2-content">
+                <h2 class="">Не убран мусор, яма на дороге, не горит фонарь?</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
+                <button type="button" class="btn btn-outline-dark">Подать запрос</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <p>Послдении три заявки</p>
+{% for reqs in page_obj %}
+    {{reqs.text}}
+{% endfor %}
+{%endblock%}
+    </div>

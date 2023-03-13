@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block title %}
+    <title>CoGo</title>
+    {% endblock %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+
+<body>
+<nav class="navbar navbar-expand-lg fixed-top header" id='head'>
+  <div class="container-fluid navig">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Переключатель навигации">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <img src="{% static 'images/CoGo.png' %}">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="ulik">
+
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'main' %}">Главная</a>
+        </li>
+
+            {% if request.user.is_authenticated %}
+          {% if request.user.is_staff %}
+          <li>
+              <a href="{% url 'user_page_admin' %}" class="nav-link ">Все заявки</a>
+          </li>
+            <li>
+              <a href="admin/" class="nav-link ">Страница администрации</a>
+          </li>
+          {% endif %}
+          <li class="nav-item">
+          <a class="nav-link " href="{% url 'request_create' %}">Заявка</a>
+         </li>
+          <li class="nav-item">
+          <a class="nav-link " href="{% url 'my_order' %}">Мои заявки</a>
+         </li>
+          <li>
+              <a href="{% url 'logout' %}" class="nav-link ">Выход</a>
+          </li>
+            {% else %}
+          <li>
+              <a class="nav-link" href="{% url 'login' %}">Войти</a>
+          </li>
+
+            {% endif %}
+      </ul>
+
+        <div class="d-flex contacts">
+           <p>(303) 555-0105</p>
+            <p>example@website.com</p>
+         </div>
+
+    </div>
+  </div>
+</nav>
+
+            <!--пагинация -->
+            <div class="">
+
+            {% block content %}
+
+                {% endblock %}
+            {% block pagination %}
+            {% if is_paginated %}
+            <div class="pagination">
+                <span class="page-links">
+                {% if page_obj.has_previous %}
+                <a href="{{ request.path }} page={{page_obj.previous_page_number}}">Предьщущая</a>
+                {% endif %}
+                    <span class="page-current">
+                    Страница {{ page_obj.number }} из
+                    {{ page_obj.paginator.num_pages }}
+                    </span>
+                {% if page_obj.has_next %}
+                <a href="{{ request.path }} page={{ page_obj.next_page_number }}">Следущая</a>
+                {% endif %}
+                </span>
+            </div>
+        {% endif %}
+        {% endblock %}
+
+
+             <!--подвал -->
+            {% block footer %}
+            {% block copyright %}
+            <footer>
+                <div class="container-vir  footer_block">
+                    <div class="footer_1 foot">
+                        <img src="{% static 'images/CoGo.png' %}">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        <p>©  2022 СoGo</p>
+                    </div>
+                    <div class="footer_2 foot">
+                        <h4>Навигация</h4>
+                        <ul>
+                            <li>Главная</li>
+                            <li>Вход</li>
+                            <li>Заявки</li>
+                            <li>Личный кабинет</li>
+                        </ul>
+                    </div>
+                    <div class="footer_3 foot">
+                        <h4>Контакты</h4>
+                        <ul>
+                            <li class="footer-info">Адрес</li>
+                            <li>г.Альметьевск ул.Гафиатуллина 22А</li>
+                        </ul>
+                        <ul>
+                            <li class="footer-info">EMAIL</li>
+                            <li>GoCo@mail.com</li>
+                        </ul>
+                        <ul>
+                            <li class="footer-info">ТЕЛЕФОН</li>
+                            <li>(808) 555-0111</li>
+                            <li>(303) 555-0105</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+
+            {% endblock %}
+            {% endblock %}
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js">
+      
+    </script>
+</body>
+
+
+</html>

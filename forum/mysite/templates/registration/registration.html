@@ -1,0 +1,15 @@
+{% extends "base_generate.html" %}
+{% load static %}
+{% block content %}
+<div class="reigis">
+    <div class="regis_cont">
+        <h2 class="text-uppercase text-center mb-5">РЕГИСТРАЦИЯ</h2>
+        <form method="POST" class="registration">
+            {{user_form.as_p}}
+            {% csrf_token %}
+            <div id="button"><input type="submit" value="Зарегистрироваться" id="but"></div>
+            <p id="link">Уже есть учетная запись? <a href="{% url 'login' %}">Войти</a></p>
+        </form>
+    </div>
+</div>
+{% endblock %}

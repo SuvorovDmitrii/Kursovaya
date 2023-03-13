@@ -1,0 +1,28 @@
+{% extends "base_generate.html" %}
+{% load static %}
+{% block content %}
+<div class="reigis size">
+    <div class="regis_cont">
+        <h2 class="text-uppercase text-center mb-5">Вход</h2>
+        <div class="reg">
+            <form method="POST">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <td>{{form.username.label_tag}}</td>
+                        <td>{{form.username}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{form.password.label_tag}}</td>
+                        <td>{{form.password}}</td>
+                    </tr>
+                    <tr>
+                        <td id = "button"><input type="submit" value="Войти" id="but"></td>
+                        <td id="link">Нет учётной записи? <a href="{% url 'registration' %}">Регистрация</a></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

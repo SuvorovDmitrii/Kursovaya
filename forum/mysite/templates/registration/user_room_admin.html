@@ -1,0 +1,28 @@
+{% extends "base_generate.html" %}
+{% load static %}
+{% block content %}
+
+<div class="requests_admin">
+    <table>
+        <tr>
+            <td>Тип заявки</td>
+            <td>Время подачи заявки</td>
+            <td>Описание заявки</td>
+            <td>Имя пользователя</td>
+            <td>Фамилия пользователя</td>
+            <td>ID пользователя</td>
+        </tr>
+        {% for req in requests %}
+        <tr>
+                <td>{{req.type}}</td>
+                <td>{{req.datetime}}</td>
+                <td>{{req.text}}</td>
+                <td>{{req.person.first_name}}</td>
+                <td>{{req.person.last_name}}</td>
+                <td>{{req.person.id}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+{% endblock %}

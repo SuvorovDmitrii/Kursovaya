@@ -1,0 +1,14 @@
+{% extends "base_generate.html" %}
+{% load static %}
+{% block content %}
+<div class="reigis">
+    <div class="regis_cont">
+        <h2 class="text-uppercase text-center mb-5">ЗАЯВКА</h2>
+        <form method="POST" class="registration"  enctype='multipart/form-data'>
+            {{request_form.as_p}}
+            {% csrf_token %}
+            <div id="button"><input type="submit" value="Отправить" id="but" ></div>
+        </form>
+    </div>
+</div>
+{% endblock %}
